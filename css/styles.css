@@ -9,6 +9,8 @@
 --btn-background-color: #188CE8;
 --logo-color: #000000;
 --border-color: #ECECEC;
+--img-overlay-color: #2F303A 40%;
+--icon-color: #AFB1B8;
 }
 
 body {
@@ -108,7 +110,9 @@ img {
 }
 
 .contact-link {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -120,6 +124,11 @@ img {
     text-decoration: none;
 }
 
+.contact-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
 .contact-link:hover, .contact-link:focus {
     color: var(--accent-color);
 }
@@ -128,12 +137,21 @@ img {
     margin-left: 50px;
 }
 
+
 /*--------------------------hero---------------------------*/
 
 .hero {
     background-color: var(--main-background-color);
     padding-top: 200px;
     padding-bottom: 200px;
+
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-img.jpg);
+    height: 600px;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-title {
@@ -187,6 +205,34 @@ background-color: var(--btn-background-color);
 
 .features-list-items {
     width: 270px;
+}
+
+.features-list-items::before {
+    display: block;
+    content: '';
+    margin-bottom: 30px;
+
+    height: 120px;
+
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.features-list-items:nth-child(1)::before {
+    background-image: url(../images/antenna\ 1.svg);
+}
+
+.features-list-items:nth-child(2)::before {
+    background-image: url(../images/clock\ 1.svg);
+}
+
+.features-list-items:nth-child(3)::before {
+    background-image: url(../images/diagram\ 1.svg);
+}
+
+.features-list-items:nth-child(4)::before {
+    background-image: url(../images/astronaut\ 1.svg);
 }
 
 .visually-hidden {
@@ -261,7 +307,13 @@ background-color: var(--btn-background-color);
 }
 
 .team-item {
+    padding-bottom: 30px;
+
     background-color: var(--secondary-title-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .team-title {
@@ -292,9 +344,108 @@ background-color: var(--btn-background-color);
     text-align: center;
 }
 
-.team .list>li:nth-child(n+2) {
+.team-img>li:nth-child(n+2) {
     margin-left: 30px;
 }
+
+.team-list {
+    justify-content: center;
+}
+
+.team-soc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-title-color);
+    color: var(--icon-color);
+}
+ 
+.team-list-items {
+    width: 44px;
+    height: 44px;
+}
+
+.social-icons {
+    fill: currentColor;
+}
+
+.team-soc-link:hover, .team-soc-link:focus {
+    background-color: var(--accent-color);
+    color: var(--secondary-title-color);
+}
+
+.team-list-items + .team-list-items {
+    margin-left: 10px;
+}
+ 
+
+
+
+/* ---------------------clients--------------------- */
+
+.clients {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.clients-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: var(--primary-title-color);
+
+    margin-bottom: 50px;
+}
+
+.clients-list {
+    display: flex;
+    justify-content: center;
+}
+
+.clients-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--icon-color);
+    border-radius: 4px;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--icon-color);
+}
+
+.clients-icon {
+    fill: currentColor;
+}
+
+.clients-link:hover, .clients-link:focus {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.clients-item {
+    
+    width: 170px;
+    height: 92px;
+}
+
+.clients-item:nth-child(n+2) {
+    margin-left: 30px;
+}
+
+
+
+
+
 
 /*-----------------------footer------------------------*/
 
@@ -350,6 +501,63 @@ background-color: var(--btn-background-color);
     color: var(--accent-color);
 }
 
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-soc {
+    margin-left: 70px;
+}
+
+.footer-soc-list {
+    display: flex;
+}
+
+.footer-soc-title {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--secondary-title-color);
+}
+
+.footer-soc-items {
+    width: 44px;
+    height: 44px;
+    
+}
+
+.footer-soc-items:nth-child(n+2) {
+    margin-left: 10px;
+}
+
+.footer-soc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    
+    
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    color: var(--secondary-title-color);
+}
+
+.footer-social-icon {
+    fill: currentColor;
+}
+
+.footer-soc-link:hover, .footer-soc-link:focus {
+    background-color: var(--accent-color);
+}
+
 /*------------------------portfolio----------*/
 
 .portfolio {
@@ -397,11 +605,16 @@ background-color: var(--btn-background-color);
     color: var(--primary-title-color);
     background-color: var(--background-color);
     cursor: pointer;
+    
 }
 
 .portfolio-btn:hover, .portfolio-btn:focus {
     color: var(--secondary-title-color);
     background-color: var(--accent-color);
+
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .title-link {
@@ -428,9 +641,17 @@ background-color: var(--btn-background-color);
     text-decoration: none;
 }
 
+.list-img-item:hover, .list-img-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .img-text {
     padding: 20px 24px;
     border-bottom : 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
 }
+
+
+
